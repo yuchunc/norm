@@ -325,7 +325,7 @@ you can use your specs in tests like so:
 input_data = schema(%{"user" => schema(%{"name" => spec(is_binary())})})
 
 property "users can update names" do
-  check all input <- gen(input_data) do
+  check_all input <- gen(input_data) do
     assert :ok == update_user(input)
   end
 end
